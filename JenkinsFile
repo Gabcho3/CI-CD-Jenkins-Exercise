@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage ('Install dependencies') {
+          steps {
+            bat 'npm install'
+          }
+        }
+
+        stage ('Fix audit'){
+          steps {
+            bat 'npm audit fix --force'
+          }
+        }
+
+        stage ("Run tests") {
+          bat "npm run test"
+        }
+    }
+}

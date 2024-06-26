@@ -3,18 +3,21 @@ pipeline{
     stages{
         stage ('Install dependencies') {
           steps {
+            bat 'cd Student-Registry-App'
             bat 'npm install'
           }
         }
 
         stage ('Fix audit'){
           steps {
+            bat 'cd Student-Registry-App'
             bat 'npm audit fix --force'
           }
         }
 
         stage ("Run tests") {
           steps{
+            bat 'cd Student-Registry-App'
             bat "npm run test"
           }
         }

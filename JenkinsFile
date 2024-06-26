@@ -9,15 +9,13 @@ pipeline{
 
         stage ('Fix audit'){
           steps {
-            bat 'cd Student-Registry-App'
             bat 'npm audit fix --force'
           }
         }
 
         stage ("Run tests") {
           steps{
-            bat 'cd Student-Registry-App'
-            bat "npm run test"
+            bat 'cd Student-Registry-App && npm run test'
           }
         }
     }

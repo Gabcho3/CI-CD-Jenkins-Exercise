@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage ('Install dependencies') {
           steps {
-            bat 'cd Student-Registry-App'
-            bat 'npm install'
+            bat 'cd Student-Registry-App && npm install'
           }
         }
 
